@@ -27,7 +27,7 @@ function App() {
     setDisplayedReview('');
 
     try {
-      const response = await axios.post('http://localhost:3000/api/get-review', { code });
+      const response = await axios.post('https://ai-agent-eight-eosin.vercel.app/', { code });
       setReview(response.data);
       simulateTypingEffect(response.data);
     } catch (error) {
