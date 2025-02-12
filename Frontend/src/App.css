@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  height: 100%;
+  background-color: #343541;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #202123;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(107, 114, 128, 0.5);
+}
+
+.nav-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.nav-icon {
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.nav-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.main-container {
+  width: 100%;
+  height: calc(100vh - 4rem);
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.editor-container, .review-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: #141414;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(107, 114, 128, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-icon {
+  color: #9ca3af;
+  margin-right: 0.5rem;
+}
+
+.header-text {
+  color: #e5e7eb;
+}
+
+.editor-content {
+  flex: 1;
+  padding: 1rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.panel-footer {
+  padding: 1rem;
+  border-top: 1px solid rgba(107, 114, 128, 0.5);
+}
+
+.review-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #10a37f;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.review-button:hover {
+  background-color: #0e916f;
+}
+
+.review-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #9ca3af;
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.copy-button:hover {
+  color: white;
+}
+
+.review-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  color: #e5e7eb;
+  width: 100%;
+}
+
+.empty-state {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.empty-state-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-icon {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.markdown-content {
+  max-width: none;
+  color: inherit;
+}
+
+/* Make editor and its container take full width */
+.editor-content > div,
+.editor-content textarea {
+  width: 100% !important;
+}
+
+/* Additional styles for markdown content */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  color: #e5e7eb;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.markdown-content code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: 'Fira Code', monospace;
+}
+
+.markdown-content pre {
+  background-color: #282c34;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.markdown-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.5rem;
+}
